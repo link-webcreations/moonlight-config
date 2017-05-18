@@ -9,5 +9,5 @@ while ! nc -z -w5 192.168.1.221 47989 &>/dev/null; do :; done
 
 # Start Moonlight
 echo "PC available, starting moonlight"
-cd ~/git/moonlight
+cd ~/git/moonlight-config
 moonlight -mapping xbox_one.map -60fps stream 192.168.1.221

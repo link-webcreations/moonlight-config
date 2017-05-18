@@ -4,6 +4,8 @@ HOWTO:   http://embedded-software-architecture.com/?page_id=140
 
 Credits: https://github.com/RoelofBerg/moonlightpisteambox
 
+Assumption : Installation as **pi** user.
+
 # Step 1 - Install
 ```shell
 $ {
@@ -26,7 +28,13 @@ moonlight pair 192.168.1.221;
 }
 ```
 
-# Step 3 - run
+# Step 3 - run if you have a keyboard
 ```shell
 $ ~/git/moonlight-config/autostart.sh
 ```
+
+# Step 3 bis - run if you dont (launch the stream remotely)
+```shell
+$ sudo -i -u pi sh -c "~pi/git/moonlight-config/autostart.sh | sudo tee /dev/tty1 > /dev/null"
+```
+_Note:_ Just change **pi** with the user autoconnected at boot on the TV.

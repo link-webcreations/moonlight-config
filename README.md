@@ -10,7 +10,7 @@ Assumption : Installation as **pi** user.
 ```shell
 $ {
 sudo apt update && sudo apt dist-upgrade -Vy &&
-echo 'deb http://archive.itimmer.nl/raspbian/moonlight jessie main' | sudo tee /etc/apt/sources.list.d/moonlight.list &&
+echo "deb http://archive.itimmer.nl/raspbian/moonlight $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/moonlight.list &&
 wget -qO - http://archive.itimmer.nl/itimmer.gpg | sudo apt-key add - &&
 sudo apt update && sudo apt install -y wakeonlan moonlight-embedded &&
 sudo usermod -a -G video $(id -un);
